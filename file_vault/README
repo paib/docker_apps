@@ -4,4 +4,4 @@ Build:
 sudo docker build -t file_vault .
 
 Run:
-sudo docker run -d --name=file_vault -p 80:80 file_vault
+sudo docker run -d --name=file_vault -p 8080:8080 file_vault
