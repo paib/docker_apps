@@ -7,9 +7,9 @@ from logging.handlers import RotatingFileHandler
 app = Flask(__name__)
 app.debug = True
 
-#color = '#262626' #Black
+color = '#262626' #Black
 #color = '#4286f4' #Blue
-color = '#33cc33' #Green
+#color = '#33cc33' #Green
 
 
 cwd = os.getcwd()
@@ -26,7 +26,7 @@ def index():
     f = open('static/img/%s.png' % image,'wb')
     f.write(urllib.request.urlopen('http://%s/static/img/%s.png' % (vault_host, image)).read())
     f.close()
-    return render_template('index.html', image=image, hostname=hostname, my_ip=my_ip, color=color) 
+    return render_template('index.html', image=image, hostname=hostname, my_ip=my_ip, site=site, color=color) 
   return "Image vault not specified"
 
 if __name__ == '__main__':
