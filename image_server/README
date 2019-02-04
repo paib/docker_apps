@@ -1,0 +1,20 @@
+Fruits webserver which displays images pulled from file_vault  app
+
+Env Variables:
+HOSTNAME # will be set for the pod to its name
+IMAGE # image to be displayed
+MY_IP # Pod's IP. must be passed as below:
+env:
+- name: MY_POD_IP
+    valueFrom:
+      fieldRef:
+        fieldPath: status.podIP
+
+SITE # Site name string
+VAULT_HOST # hostname of the image vault service
+
+Build:
+sudo docker build -t image_server .
+
+Run:
+sudo docker run -d --name=image_server -p 8080:8080 image_server

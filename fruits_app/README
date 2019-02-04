@@ -1,7 +1,0 @@
-Fruits webserver which displays images pulled from file_vault  app
-
-Build:
-sudo docker build -t fruit .
-
-Run:
-sudo docker run -d --name=fruit -p 8080:8080 fruit

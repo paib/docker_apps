@@ -8,4 +8,4 @@ FROM base
 COPY --from=builder /install /usr/local
 COPY app /app
 WORKDIR /app
-CMD ["python", "fruits_app.py"]
+CMD ["python", "image_server.py"]
