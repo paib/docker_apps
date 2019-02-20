@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import logging
 import urllib.request
 from logging.handlers import RotatingFileHandler
@@ -28,6 +28,16 @@ def index():
     f.close()
     return render_template('index.html', image=image, hostname=hostname, my_ip=my_ip, site=site, color=color) 
   return "Image vault not specified"
+
+@app.route('/login', methods=['POST'])
+def login():
+
+  usr = request.form['username']
+  pwd = request.form['password']
+  if pwd == '$uper$ecret':
+    return "Hello %s.<br>Login successfull" % usr
+  else:
+    return "Login failed.<br>Please try again"
 
 if __name__ == '__main__':
   # Log http requests

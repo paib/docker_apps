@@ -8,6 +8,14 @@
         <p>Site: {{ site }}</p>
         <p>Hostname: {{ hostname }}</p>
         <p>IP: {{ my_ip }}</p>
+        <form action="/login" method="post">
+            User name:<br>
+            <input type="text" name="username"><br>
+            Password:<br>
+            <input type="password" name="password">
+            <br>
+            <input type="submit">
+            </form>
         <h1>Game: {{ image }}</h1>
 
         <img src="static/img/{{ image }}.png" alt="{{ image }}" align="middle" height=420 style="background-color:{{ color }}">
