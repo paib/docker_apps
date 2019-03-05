@@ -23,10 +23,11 @@ vault_host = os.getenv('VAULT_HOST', None)
 def index():
 
   if vault_host:
-    f = open('static/img/%s.png' % image,'wb')
-    f.write(urllib.request.urlopen('http://%s/static/img/%s.png' % (vault_host, image)).read())
-    f.close()
-    return render_template('index.html', image=image, hostname=hostname, my_ip=my_ip, site=site, color=color) 
+    #f = open('static/img/%s.png' % image,'wb')
+    #f.write(urllib.request.urlopen('http://%s/static/img/%s.png' % (vault_host, image)).read())
+    #f.close()
+    image_url = 'http://%s/static/img/%s.png' % (vault_host, image)
+    return render_template('index.html', image_url=image_url, vault_host=vault_host, hostname=hostname, my_ip=my_ip, site=site, color=color) 
   return "Image vault not specified"
 
 @app.route('/login', methods=['POST'])

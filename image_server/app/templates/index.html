@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fruits App</title>
+    <title>Image server</title>
 </head>
 <body style="background-color:{{ color }};color:white">
     <div style="text-align:center;">
@@ -18,7 +18,7 @@
             </form>
         <h1>Game: {{ image }}</h1>
 
-        <img src="static/img/{{ image }}.png" alt="{{ image }}" align="middle" height=420 style="background-color:{{ color }}">
+        <img src="http://{{ vault_host }}/static/img/{{ image }}.png" alt="{{ image }}" align="middle" height=420 style="background-color:{{ color }}">
     </div>
 </body>
 </html>
